@@ -5,6 +5,6 @@ const App = () => {
       Hello world!
     </h1>
   )
-}
+};
 
 export default App;

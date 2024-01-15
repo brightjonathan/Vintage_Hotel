@@ -1,3 +1,4 @@
+import Header from "../component/Header";
 
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* <Header /> */}
+      <Header />
       {/* <Hero /> */}
       <div className="container mx-auto">
         {/* <SearchBar /> */}
@@ -18,4 +19,4 @@ const Layout = ({ children }: Props) => {
   )
 }
 
-export default Layout
+export default Layout;
