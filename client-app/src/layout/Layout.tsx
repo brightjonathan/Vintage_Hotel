@@ -1,4 +1,7 @@
+import Footer from "../component/Footer";
 import Header from "../component/Header";
+import Hero from "../component/Hero";
+import SearchBar from "../component/SearchBar";
 
 
 interface Props {
@@ -9,14 +12,16 @@ const Layout = ({ children }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      {/* <Hero /> */}
+      <Hero />
       <div className="container mx-auto">
-        {/* <SearchBar /> */}
+        <SearchBar />
       </div>
-      <div className="container mx-auto py-10 flex-1">{children}</div>
-      {/* <Footer /> */}
+      {/* <div className="container mx-auto py-10 flex-1">{children}</div> */}
+      <Footer />
     </div>
   )
 }
 
 export default Layout;
+
+

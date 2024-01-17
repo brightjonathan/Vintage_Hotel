@@ -1,9 +1,18 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Layout from "./layout/Layout";
+
 
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout></Layout>}/>
+      </Routes>
+    </Router>
   )
 };
 
