@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import {FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import * as apiClient from '../api-client'; //import the apiClient
+import { useAppContext } from '../Context/AppContext';
 
 export type RegisterFormData = {
     username: string;
@@ -16,6 +17,8 @@ export type RegisterFormData = {
 
 
 const Register = () => {
+
+  const {showToast} = useAppContext();
 
     const [passwordEye, setPasswordEye] = useState(false);
     const [ComfirmpasswordEye, setComfirmPasswordEye] = useState(false);
@@ -40,10 +43,11 @@ const Register = () => {
 
       const mutation = useMutation(apiClient.register_api,{
         onSuccess: async ()=>{
-         console.log('register success');
+         showToast({message: "Registration success!", type: 'SUCCESS'});
         },
         onError: (error: Error)=>{
-          console.log(error.message);
+          showToast({message: error.message, type: 'ERROR'});
+          //console.log(error.message);
         },
       })
 
